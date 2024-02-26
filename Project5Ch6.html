@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+     JavaScript 7th Edition
+     Chapter 6
+     Project
+
+     Author: Camila Lopez
+     Date: 18 Feb 2024
+
+     Filename: Project5Ch6.html
+  -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Web Scripting Languages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="WSL.js" defer></script>
+  <script src="Project5Ch6.js" defer></script>
+</head>
+<body>
+
+  <!-- Side Nav Bar-->
+  <div class="sideNav" id="overlaySideNav">
+    <button class="hamburger">&#9776;</button>
+    <nav class="menuNav">
+      <a href="WSLProjects.html">Main Page</a>
+      <a href="#">Project 3</a>
+      <a href="Project4Ch5.html">Project 4 Ch5</a>
+      <a href="Project5Ch6.html">Project 5 Ch6</a>
+      <a href="Project6Ch7.html">Project 6 Ch7</a>
+    </nav>
+  </div>
+
+  <!--  Title Banner-->
+  <div class="mainImgContainer">
+    <img id="codeImg" src="Images/shuttleCompany.jpeg" alt="JavaScript Code">
+    <div class="overlayText">Shuttle Now</div>
+  </div>
+
+<!--  Ticket reservation title-->
+  <div class="PageContainer">
+    <div class="contentContainer">
+      <div class="projTitle">Reserve your ticket </div>
+    </div>
+  </div>
+
+<!--  Ticket Reservation form-->
+  <div class="PageContainer">
+    <!-- Form to book a class -->
+    <div class="bookingDiv bookingDivRight">
+      <form id="ticket-reservation" onsubmit="onSubmit(); return false">
+        <fieldset>
+          <legend>Reserve ticket:</legend><br>
+
+          <!-- Imput for date and time -->
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date"><br>
+          <div id="date-error">Please choose a valid date</div>
+
+
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time"><br>
+          <div id="time-error">Please choose a valid time</div>
+
+          <!-- select pick-up location -->
+          <label for="pickup">Pick-up locations:</label>
+          <select id="pickup" name="pickup">
+            <option value="">Please slect pick-up location</option>
+            <option value="annandele">Annandele</option>
+            <option value="alexandria">Alexandria</option>
+            <option value="loundoun">Loundoun</option>
+            <option value="manassas">Manassas</option>
+            <option value="woodbridge">Woodbridge</option>
+          </select>
+          <div id="pickup-error">Please choose a valid pick-up location</div>
+
+          <!-- Select destination location -->
+          <label for="destination">Destination locations:</label>
+            <select id="destination" name="destination">
+              <option value="">Please select destination location</option>
+              <option value="annandele">Annandele</option>
+              <option value="alexandria">Alexandria</option>
+              <option value="loundoun">Loundoun</option>
+              <option value="manassas">Manassas</option>
+              <option value="woodbridge">Woodbridge</option>
+            </select>
+          <div id="destination-error">Please choose a valid destination location</div>
+
+          <!-- Select payment method -->
+          <label for="payMethod">Payment Method:</label>
+            <select id="payMethod" name="payMethod">
+              <option value="">Please select payment Method</option>
+              <option value="cash">Cash</option>
+              <option value="creditCard">Credit Card</option>
+              <option value="paypal">Paypal</option>
+              <option value="applePay">Apple Pay</option>
+            </select>
+          <div id="payMethod-error">Please choose a valid payment method</div>
+
+          <input type="submit" value="Submit"><br><br>
+        </fieldset>
+      </form>
+
+      <!-- Message after submit with calculation of class cost -->
+      <div class="successMessageContainer" id="msgContainer">
+        <div class="successMessage">
+          <p id="displayMessage"></p>
+        </div>
+      </div>
+  </div>
+
+  </div>
+
+  <!--  Footer -->
+  <footer>
+    <h3>Camila Lopez Gutierrez &bull; Project Web Scripting Languages</h3>
+    <h3>2024</h3>
+    <p><a href="mailto:cjl2737@email.vccs.edu">cjl2737@email.vccs.edu</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,330 @@
+/*  JavaScript 7th Edition
+    Project 4 - Chapter 5
+    Chapter Case
+
+    Filename: styles.css
+*/
+
+
+/* --------------------------------------------------------------*/
+/* Styles for body section */
+/* --------------------------------------------------------------*/
+body {
+    font-family: "Lato", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------------------------------------------------*/
+/* Styles for the side Navigation bar */
+/* --------------------------------------------------------------*/
+
+/* Style for navigation bar- putting it hidden*/
+.sideNav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: rgba(0,0,0,.95);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+}
+
+/* Style for open and close nav bar */
+.sideNav.open {
+    left: 0;
+}
+
+/* Style for nav button */
+.hamburger {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 2;
+    color: #fff;
+    background-color: #070A0D;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* Style for nav bar*/
+.menuNav {
+    list-style: none;
+    padding: 0;
+    margin-top: 70px;
+}
+
+.menuNav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.menuNav a:hover {
+    color: #f1f1f1;
+}
+
+/* --------------------------------------------------------------*/
+/* Styles for main page */
+/* --------------------------------------------------------------*/
+
+/* Style for image- main page */
+.mainImgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+#codeImg {
+    width: 100%;
+    height: 350px;
+    opacity: 0.5;
+    z-index: -2;
+}
+
+.overlayText {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #393e46;
+    font-size: 60px;
+    line-height: 63px;
+    z-index: 2;
+    position: absolute;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------*/
+/* Styles for page content */
+/* --------------------------------------------------------------*/
+
+/* Set title space */
+.PageContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #ececec;
+    height: auto;
+}
+.PageContainer:nth-child(odd) {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: auto;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 100px 20px;
+    padding: 20px;
+    p{
+        text-align: center;
+    }
+}
+
+.projTitle {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+}
+
+.contentContainerCenter {
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------------------------------------------------*/
+/* Styles for texts */
+/* --------------------------------------------------------------*/
+
+.webSecurityText {
+    margin: 2% 3% 0%;
+    p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+}
+
+
+/* --------------------------------------------------------------*/
+/* Styles for lists */
+/* --------------------------------------------------------------*/
+
+ol li {
+    list-style-type: none;
+    counter-increment: item;
+    padding: 3px;
+    max-width: 90%;
+}
+
+ol li::before {
+    content: counter(item) ". ";
+    color: black;
+}
+
+ul li {
+    list-style: none;
+    padding: 3px;
+}
+
+ul#practicesList {
+    li::before {
+        content: "\00BB";
+    }
+}
+
+ul#additionalResources {
+    list-style-type: none;
+}
+
+/* --------------------------------------------------------------*/
+/* Styles for Ticket reservation Form */
+/* --------------------------------------------------------------*/
+
+/* Rules for Success Message display from hidden*/
+
+.successMessageContainer {
+    display: none;
+    justify-content: center;
+}
+.successMessage {
+    background-color: #455d7a;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 25px;
+    width: 500px;
+    align-items: center;
+
+    p {
+        color: white;
+        text-align: center;
+    };
+}
+
+#ticket-reservation {
+    margin: 3%;
+}
+
+
+/* --------------------------------------------------------------*/
+/* Styles for Forms */
+/* --------------------------------------------------------------*/
+
+/* Rules format form */
+fieldset {
+    box-shadow: 7px 4px 4px #a6a4a4;
+    background-color: #eeeeee;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 8px;
+    > * {
+        margin-left: 8px;
+        margin-bottom: 12px;
+    }
+    > div {
+        font-size: small;
+        color: red;
+        display: none;
+    }
+}
+
+legend {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+input {
+    margin: 5px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 9px 20px;
+    margin: 7px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+select {
+    width: 100%;
+    padding: 9px 20px;
+    margin: 7px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=submit] {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --------------------------------------------------------------*/
+/* Styles for split screen */
+/* --------------------------------------------------------------*/
+
+.splitScreen {
+    display: flex;
+    flex-direction: row;
+    > div {
+        width: 50%;
+        padding: 2em;
+    }
+}
+
+#feedback {
+    margin-top: 4em;
+    white-space: pre-line;
+    text-align: center;
+}
+
+
+/* --------------------------------------------------------------*/
+/* Styles for the side Footer */
+/* --------------------------------------------------------------*/
+
+footer {
+    text-align: center;
+    font-size: 0.65em;
+    clear: left;
+    padding-top: 5em;
+    margin-top: auto;
+}
+
+footer a {
+    color: rgba(44, 56, 100, 0.991);
+    text-decoration: none;
+    font-size: 1.2em;
+}
