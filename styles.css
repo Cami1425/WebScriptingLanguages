@@ -310,6 +310,92 @@ input[type=submit] {
     text-align: center;
 }
 
+/* --------------------------------------------------------------*/
+/* Styles for polaroid img with file button */
+/* --------------------------------------------------------------*/
+
+/* Rules format polaroid Image */
+div.polaroid {
+    width: 380px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    margin: 20px auto 25px;
+}
+
+div.polaroidContainer {
+    padding: 18px 20px;
+    p {
+        color: #233142;
+        font-size: 13px;
+    }
+    input {
+        display: block;
+        margin-left: 30px;
+        font-size: 20px;
+        padding: 15px;
+        color: #233142;
+    }
+}
+
+#iconImg {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    display: block;
+}
+
+/* --------------------------------------------------------------*/
+/* Styles for winners table */
+/* --------------------------------------------------------------*/
+
+/* Rules section winners */
+section {
+    margin-top: 0;
+    padding-bottom: 20px;
+    user-select:none;
+    height: 680px;
+    position: relative;
+}
+
+div#container {
+    width: 900px;
+    height: 380px;
+    margin: 30px auto;
+    overflow:auto;
+    padding: 10px;
+}
+
+/* Rules table JSON retrieve winners */
+div#container table {
+    border-collapse: collapse;
+    font-size: 0.8em;
+    margin: auto;
+}
+
+div#container th, div#container td {
+    border: 1px solid rgb(160, 160, 160);
+    background-color: #eaeaea;
+    padding: 7px 5px;
+}
+div#container table th {
+    color: white;
+    background-color: #818181;
+    text-align: center;
+    font-weight: bold;
+}
+
+div#container table tr:nth-of-type(even) td {
+    background-color: white;
+}
+div#container table tr td:first-of-type {
+    white-space:nowrap;
+}
+
+div#container table tr td:last-of-type {
+    white-space:nowrap;
+}
+
 
 /* --------------------------------------------------------------*/
 /* Styles for the side Footer */

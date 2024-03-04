@@ -1,0 +1,47 @@
+{ "directory" : [
+  {
+    "TicketNo" : "4562",
+    "First Name" : "Amy",
+    "Last Name" : "James",
+    "Place" : "First place",
+    "Prize": "All paid trip, 5 days",
+    "Destination" : "Aruba",
+    "Redeem" : "Until November"
+  },
+  {
+    "TicketNo" : "2236",
+    "First Name" : "Kelly",
+    "Last Name" : "Moore",
+    "Place" : "Second place",
+    "Prize": "All-inclusive hotel, 4 days",
+    "Destination" : "Embassy Suites by Hilton Aruba Resort",
+    "Redeem" : "Until November"
+  },
+  {
+    "TicketNo" : "6935",
+    "First Name" : "Trevor",
+    "Last Name" : "Donovan",
+    "Place" : "Third place",
+    "Prize": "Round trip air tickets",
+    "Destination" : "Puerto Rico",
+    "Redeem" : "Until October"
+  },
+  {
+    "TicketNo" : "4268",
+    "First Name" : "Monic",
+    "Last Name" : "Burd",
+    "Place" : "Fourth place",
+    "Prize": "Round trip air tickets",
+    "Destination" : "Puerto Rico",
+    "Redeem" : "Until October"
+  },
+  {
+    "TicketNo" : "1267",
+    "First Name" : "Jason",
+    "Last Name" : "Smith",
+    "Place" : "Fifth place",
+    "Prize": "Round trip air tickets",
+    "Destination" : "Cuba",
+    "Redeem" : "Until September"
+  }
+]}
