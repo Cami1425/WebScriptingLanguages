@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+           JavaScript 7th Edition
+           Chapter 9
+           Project 8
+
+           Author: Camila Lopez
+           Date: 10 March 2024
+
+           Filename: Project8Ch9.html
+        -->
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Web Scripting Languages</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css" />
+        <script src="WSL.js" defer></script>
+        <script src="Project8Ch9.js" defer></script>
+    </head>
+    <body>
+
+        <!-- Side Nav Bar-->
+        <div class="sideNav" id="overlaySideNav">
+            <button class="hamburger">&#9776;</button>
+            <nav class="menuNav">
+                <a href="WSLProjects.html">Main Page</a>
+                <a href="#">Project 3</a>
+                <a href="Project4Ch5.html">Project 4 Ch5</a>
+                <a href="Project5Ch6.html">Project 5 Ch6</a>
+                <a href="Project6Ch7.html">Project 6 Ch7</a>
+                <a href="Project7Ch8.html">Project 7 Ch8</a>
+                <a href="Project8Ch9.html">Project 8 Ch9</a>
+            </nav>
+        </div>
+
+        <!--  Title Banner-->
+        <div class="mainImgContainer">
+            <img id="codeImg" src="Images/fashionBoutique.jpg" alt="JavaScript Code">
+            <div class="overlayText"></div>
+        </div>
+
+        <!--  Contest title-->
+        <div class="PageContainer">
+            <div class="contentContainer">
+                <div class="projTitle">Welcome to Madara Boutique</div>
+                <p>We feature casual to those beautiful unique boutique pieces! We know how important it is for our customers to buy with confidence that they will receive the best merchandise in the best condition. That is why we will strive to make sure that you have a pleasant shopping experience and peace of mind that we will ship items in the fastest time possible with the best packaging available. </p>
+            </div>
+        </div>
+
+        <!-- Gallery container -->
+        <div class="galleryContainer PageContainer">
+
+            <!-- Show products and specifications -->
+
+            <!-- Gallery item 1 -->
+            <div class="gallery">
+                <a target="_blank" href="/Images/shirt1.jpg">
+                    <img src="/Images/shirt1.jpg" alt="Flowers shirt">
+                </a>
+                <div id="shirt1" class="description">
+                    <div id="shirt1.description">Floral & Letter Graphic Drop Shoulder Tee </div><br>
+                    <label>Price</label>
+                    <input id="shirt1.price" name="price" type="text" value="$15.50" readonly="readonly" disabled /> <br>
+
+                    <label>Size</label>
+                    <select id="shirt1.size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="Xlarge">XLarge</option>
+                    </select> <br>
+
+                    <label>Qty </label>
+                    <select id="shirt1.quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" value="Add to Cart" class="submitButton" onclick="addToCart('shirt1')" />
+                </div>
+            </div>
+
+            <!-- Gallery item 2 -->
+            <div class="gallery">
+                <a target="_blank" href="/Images/shirt2.jpg">
+                    <img src="/Images/shirt2.jpg" alt="Forest">
+                </a>
+                <div id="shirt2" class="description">
+                    <div id="shirt2.description">Letter Graphic Drop Shoulder Tee </div><br>
+                    <label>Price</label>
+                    <input id="shirt2.price" name="price" type="text" value="$15.50" readonly="readonly" disabled /> <br>
+
+                    <label>Size</label>
+                    <select id="shirt2.size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="Xlarge">XLarge</option>
+                    </select> <br>
+
+                    <label>Qty </label>
+                    <select id="shirt2.quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" value="Add to Cart" class="submitButton" onclick="addToCart('shirt2')" />
+                </div>
+            </div>
+
+            <!-- Gallery item 3 -->
+            <div class="gallery">
+                <a target="_blank" href="/Images/shirt3.jpg">
+                    <img src="/Images/shirt3.jpg" alt="Chosen White Shirt">
+                </a>
+                <div id="shirt3" class="description">
+                    <div id="shirt3.description">Letter Graphic Drop Shoulder Tee </div><br>
+                    <label>Price</label>
+                    <input id="shirt3.price" name="price" type="text" value="$12.50" readonly="readonly" disabled /> <br>
+
+                    <label>Size</label>
+                    <select id="shirt3.size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="Xlarge">XLarge</option>
+                    </select> <br>
+
+                    <label>Qty </label>
+                    <select id="shirt3.quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" value="Add to Cart" class="submitButton" onclick="addToCart('shirt3')" />
+                </div>
+            </div>
+
+            <!-- Gallery item 4 -->
+            <div class="gallery">
+                <a target="_blank" href="/Images/shirt4.jpg">
+                    <img src="/Images/shirt4.jpg" alt="Chosen White Shirt">
+                </a>
+                <div id="shirt4" class="description">
+                    <div id="shirt4.description">Letter Graphic Drop Shoulder Tee </div><br>
+                    <label>Price</label>
+                    <input id="shirt4.price" name="price" type="text" value="$12.50" readonly="readonly" disabled /> <br>
+
+                    <label>Size</label>
+                    <select id="shirt4.size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="Xlarge">XLarge</option>
+                    </select> <br>
+
+                    <label>Qty </label>
+                    <select id="shirt4.quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" value="Add to Cart" class="submitButton" onclick="addToCart('shirt4')" />
+                </div>
+            </div>
+
+            <!-- Gallery item 5 -->
+            <div class="gallery">
+                <a target="_blank" href="/Images/shirt5.jpg">
+                    <img src="/Images/shirt5.jpg" alt="Palm Springs Shirt">
+                </a>
+                <div id="shirt5" class="description">
+                    <div id="shirt5.description">Letter Graphic Drop Shoulder Tee  </div><br>
+                    <label>Price</label>
+                    <input id="shirt5.price" name="price" type="text" value="$12.50" readonly="readonly" disabled /> <br>
+
+                    <label>Size</label>
+                    <select id="shirt5.size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="Xlarge">XLarge</option>
+                    </select> <br>
+
+                    <label>Qty </label>
+                    <select id="shirt5.quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" value="Add to Cart" class="submitButton" onclick="addToCart('shirt5')" />
+                </div>
+            </div>
+
+            <!-- Gallery item 6 -->
+            <div class="gallery">
+                <a target="_blank" href="/Images/shirt6.jpg">
+                    <img src="/Images/shirt6.jpg" alt="Be the light shirt">
+                </a>
+                <div id="shirt6" class="description">
+                    <div id="shirt6.description"> Sun & Slogan Graphic Drop Shoulder Tee  </div><br>
+                    <label>Price</label>
+                    <input id="shirt6.price" name="price" type="text" value="$12.50" readonly="readonly" disabled /> <br>
+
+                    <label>Size</label>
+                    <select id="shirt6.size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="Xlarge">XLarge</option>
+                    </select> <br>
+
+                    <label>Qty </label>
+                    <select id="shirt6.quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" value="Add to Cart" class="submitButton" onclick="addToCart('shirt6')" />
+                </div>
+            </div>
+
+            <!-- Gallery item 7 -->
+            <div class="gallery">
+                <a target="_blank" href="/Images/shirt7.jpg">
+                    <img src="/Images/shirt7.jpg" alt="Camera Flowers Shirt">
+                </a>
+                <div id="shirt7" class="description">
+                    <div id="shirt7.description"> Qutie Camera And Floral Print Drop Shoulder Oversize Tee </div><br>
+                    <label>Price</label>
+                    <input id="shirt7.price" name="price" type="text" value="$15.50" readonly="readonly" disabled /> <br>
+
+                    <label>Size</label>
+                    <select id="shirt7.size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="Xlarge">XLarge</option>
+                    </select> <br>
+
+                    <label>Qty </label>
+                    <select id="shirt7.quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" value="Add to Cart" class="submitButton" onclick="addToCart('shirt7')" />
+                </div>
+            </div>
+
+            <!-- Gallery item 8 -->
+            <div class="gallery">
+                <a target="_blank" href="/Images/shirt8.jpg">
+                    <img src="/Images/shirt8.jpg" alt="Coffee shirt">
+                </a>
+                <div id="shirt8" class="description">
+                    <div id="shirt8.description"> Coffee Print Drop Shoulder Oversized Tee </div><br>
+                    <label>Price</label>
+                    <input id="shirt8.price" name="price" type="text" value="$14.50" readonly="readonly" disabled /> <br>
+
+                    <label>Size</label>
+                    <select id="shirt8.size" name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="Xlarge">XLarge</option>
+                    </select> <br>
+
+                    <label>Qty </label>
+                    <select id="shirt8.quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <input type="button" value="Add to Cart" class="submitButton" onclick="addToCart('shirt8')" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Display shopping cart when add a product -->
+        <div class="soppingCartContainer">
+            <div class="PageContainer">
+                <div class="contentContainer">
+                    <div class="projTitle">Shopping Cart</div>
+                </div>
+            </div>
+            <div id="shoppingCart"></div>
+        </div>
+
+        <!--  Footer -->
+        <footer>
+            <h3>Camila Lopez Gutierrez &bull; Project Web Scripting Languages</h3>
+            <h3>2024</h3>
+            <p><a href="mailto:cjl2737@email.vccs.edu">cjl2737@email.vccs.edu</a></p>
+        </footer>
+    </body>
+</html>

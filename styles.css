@@ -396,9 +396,92 @@ div#container table tr td:last-of-type {
     white-space:nowrap;
 }
 
+/* --------------------------------------------------------------*/
+/* Styles for gallery Store */
+/* --------------------------------------------------------------*/
+
+div.galleryContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: auto;
+}
+div.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 30px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    height: auto;
+}
+
+div.description {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    input {
+        width: 50%;
+
+    }
+    select {
+        width: 50%;
+        align-items: center;
+    }
+}
 
 /* --------------------------------------------------------------*/
-/* Styles for the side Footer */
+/* Styles for Shopping Cart Table */
+/* --------------------------------------------------------------*/
+
+#shoppingCart {
+    table {
+        border-collapse: collapse;
+        font-size: 1em;
+        text-align: center;
+        margin: auto;
+    }
+
+    th, td {
+        border: 1px solid rgb(160, 160, 160);
+        background-color: #eaeaea;
+        padding: 7px 20px;
+    }
+
+    table th {
+        color: white;
+        background-color: #818181;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    table tr:nth-of-type(even) td {
+        background-color: white;
+    }
+
+    table tr td:first-of-type {
+        white-space:nowrap;
+    }
+
+    table tr td:last-of-type {
+        white-space:nowrap;
+    }
+}
+
+/* --------------------------------------------------------------*/
+/* Styles for the Footer */
 /* --------------------------------------------------------------*/
 
 footer {
