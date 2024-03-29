@@ -395,7 +395,9 @@ div#container table tr td:first-of-type {
 div#container table tr td:last-of-type {
     white-space:nowrap;
 }
-
+ .bolds {
+     font-weight: bold;
+ }
 /* --------------------------------------------------------------*/
 /* Styles for gallery Store */
 /* --------------------------------------------------------------*/
@@ -478,6 +480,7 @@ div.description {
     table tr td:last-of-type {
         white-space:nowrap;
     }
+
 }
 
 /* --------------------------------------------------------------*/

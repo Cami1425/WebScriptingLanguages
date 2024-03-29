@@ -20,7 +20,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css" />
         <script src="WSL.js" defer></script>
-        <script src="Project8Ch9.js" defer></script>
     </head>
     <body>
 
@@ -29,7 +28,6 @@
             <button class="hamburger">&#9776;</button>
             <nav class="menuNav">
                 <a href="WSLProjects.html">Main Page</a>
-                <a href="#">Project 3</a>
                 <a href="Project4Ch5.html">Project 4 Ch5</a>
                 <a href="Project5Ch6.html">Project 5 Ch6</a>
                 <a href="Project6Ch7.html">Project 6 Ch7</a>
@@ -42,7 +40,7 @@
         <!--  Title Banner-->
         <div class="mainImgContainer">
             <img id="codeImg" src="Images/geometricBlueBackground.jpg" alt="JavaScript Code">
-            <div class="overlayText" style="color:white; font-size:80px;" >Shopping Calculator</div>
+            <div class="overlayText" style="color:white;" >Shopping Calculator</div>
         </div>
 
         <!--  Content title-->
@@ -53,13 +51,13 @@
                 <div id="shoppingCart">
 
                     <?php
-                    // Data items and prices
+                    // Array of data items and prices
                     $items = array(
-                        array("Oil Candle", 15.00),
-                        array("Essential Oil", 15.00),
-                        array("Bath Oil", 15.00),
-                        array("Bath Bombs", 14.99),
-                        array("Foaming Bath", 14.99)
+                        array("Oil Candle", 23.95),
+                        array("Essential Oil", 9.49),
+                        array("Bath Oil", 18.47),
+                        array("Bath Bombs", 26.80),
+                        array("Foaming Bath", 9.99)
                     );
 
                     // Declare sales tax rate
@@ -79,14 +77,16 @@
 
                     ?>
 
-                    <h2>Shopping Calculator</h2>
-
-                    <table>
+                    <!-- Calculator table -->
+                    <table style="width:50%">
+                        <tr>
+                            <th colspan="2" style="font-size:1.3em">Calculator</th>
                         <tr>
                             <th>Item</th>
                             <th>Price</th>
                         </tr>
 
+                        <!-- Display array items in table -->
                         <?php foreach ($items as $item): ?>
                         <tr>
                             <td><?php echo $item[0]; ?></td>
@@ -95,16 +95,16 @@
                         <?php endforeach; ?>
 
                         <tr>
-                            <th>Sub-total</th>
-                            <td> <?php echo "$".$subTotal?></td>
+                            <td class="bolds" >Sub-total</td>
+                            <td class="bolds" > <?php echo "$".$subTotal?></td>
                         </tr>
                         <tr>
-                            <th>Tax (at 6%)</th>
-                            <td> <?php echo "$".$tax ?></td>
+                            <td class="bolds" >Tax (at 6%)</td>
+                            <td class="bolds" > <?php echo "$".$tax ?></td>
                         </tr>
                         <tr>
-                            <td>Total</td>
-                            <td> <?php echo $total?></td>
+                            <td class="bolds" >Total</td>
+                            <td class="bolds" > <?php echo $total?></td>
                         </tr>
                     </table>
 
