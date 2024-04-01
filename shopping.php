@@ -34,6 +34,7 @@
                 <a href="Project7Ch8.html">Project 7 Ch8</a>
                 <a href="Project8Ch9.html">Project 8 Ch9</a>
                 <a href="shopping.php">Shopping Calculator</a>
+                <a href="phoneBillCalculator.php">Phone Bill Calculator</a>
             </nav>
         </div>
 

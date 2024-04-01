@@ -47,7 +47,7 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
-    z-index: 2;
+    z-index: 1200;
     color: #fff;
     background-color: #070A0D;
     font-size: 20px;
@@ -448,7 +448,8 @@ div.description {
 /* Styles for Shopping Cart Table */
 /* --------------------------------------------------------------*/
 
-#shoppingCart {
+/*Shopping Cart project*/
+#shoppingCart{
     table {
         border-collapse: collapse;
         font-size: 1em;
@@ -480,7 +481,46 @@ div.description {
     table tr td:last-of-type {
         white-space:nowrap;
     }
+}
+/* --------------------------------------------------------------*/
+/*Calculator project*/
+#calculator{
+    table {
+        border-collapse: collapse;
+        font-size: 1em;
+        text-align: center;
+        margin: auto;
+    }
 
+    th, td {
+        border: 1px solid rgb(160, 160, 160);
+        background-color: #eaeaea;
+        padding: 7px 20px;
+    }
+
+    table th {
+        color: white;
+        background-color: #818181;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    table tr:nth-of-type(even) td {
+        background-color: white;
+    }
+
+    table tr td:first-of-type {
+        white-space:nowrap;
+    }
+
+    table tr td:last-of-type {
+        white-space:nowrap;
+    }
+}
+
+.calculatorForm {
+    display: flex;
+    flex-direction: column;
 }
 
 /* --------------------------------------------------------------*/
