@@ -1,0 +1,193 @@
+mysql> CREATE database Employees;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE Employees;
+Database changed
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| employees  |
++------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE staff (
+    -> first_name CHAR(25) NOT NULL,
+    -> last_name CHAR(25) NOT NULL,
+    -> city CHAR(15) NOT NULL,
+    -> state CHAR(2) NOT NULL,
+    -> zip CHAR(5),
+    -> hourly_pay_rate DOUBLE(4,2) UNSIGNED NOT NULL CHECK (hourly_pay_rate >= 10.00 and hourly_pay_rate <= 99.99),
+    -> manager_id MEDIUMINT UNSIGNED NOT NULL
+    -> );
+Query OK, 0 rows affected, 2 warnings (0.01 sec)
+
+mysql> EXPLAIN staff;
++-----------------+----------------------+------+-----+---------+-------+
+| Field           | Type                 | Null | Key | Default | Extra |
++-----------------+----------------------+------+-----+---------+-------+
+| first_name      | char(25)             | NO   |     | NULL    |       |
+| last_name       | char(25)             | NO   |     | NULL    |       |
+| city            | char(15)             | NO   |     | NULL    |       |
+| state           | char(2)              | NO   |     | NULL    |       |
+| zip             | char(5)              | YES  |     | NULL    |       |
+| hourly_pay_rate | double(4,2) unsigned | NO   |     | NULL    |       |
+| manager_id      | mediumint unsigned   | NO   |     | NULL    |       |
++-----------------+----------------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> SHOW CREATE TABLE staff;
++-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                                                                                                                                                                                                                                                                                                                                         |
++-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| staff | CREATE TABLE `staff` (
+  `first_name` char(25) NOT NULL,
+  `last_name` char(25) NOT NULL,
+  `city` char(15) NOT NULL,
+  `state` char(2) NOT NULL,
+  `zip` char(5) DEFAULT NULL,
+  `hourly_pay_rate` double(4,2) unsigned NOT NULL,
+  `manager_id` mediumint unsigned NOT NULL,
+  CONSTRAINT `staff_chk_1` CHECK (((`hourly_pay_rate` >= 10.00) and (`hourly_pay_rate` <= 99.99)))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> LOAD DATA INFILE '/Applications/XAMPP/htdocs/EmpData/newemp.txt' INTO TABLE staff 
+    -> FIELDS TERMINATED BY ',';
+Query OK, 21 rows affected (0.00 sec)
+Records: 21  Deleted: 0  Skipped: 0  Warnings: 0
+
+mysql> SELECT * FROM staff;
++------------+-------------+-----------------+-------+-------+-----------------+------------+
+| first_name | last_name   | city            | state | zip   | hourly_pay_rate | manager_id |
++------------+-------------+-----------------+-------+-------+-----------------+------------+
+| Juan       | Perry       | Richmond        | VA    | 11111 |           17.53 |          6 |
+| Mary       | Zilino      | Reston          | VA    | 22222 |           15.68 |          3 |
+| Shawn      | Green       | Fairfax         | VA    | 33333 |           12.50 |          4 |
+| Joseph     | Bergamaschi | Arlington       | VA    | 44444 |           15.25 |          5 |
+| Camila     | Mendez      | Alexandria      | VA    | 55555 |           25.00 |          7 |
+| Sofia      | Shapiro     | Charlottesville | VA    | 66666 |           18.50 |          8 |
+| Lorena     | Jhonson     | Richmond        | VA    | 11112 |           12.50 |          9 |
+| James      | Taylor      | Annandele       | VA    | 77777 |           15.70 |         10 |
+| Robert     | Martinez    | Ashburn         | VA    | 88888 |           17.53 |         11 |
+| Kerry      | Smith       | Reston          | VA    | 22221 |           30.60 |         12 |
+| Aria       | Davis       | Leesburg        | VA    | 99999 |           24.60 |         13 |
+| Felicity   | Jones       | Manassas        | VA    | 32222 |           20.60 |         14 |
+| Laura      | Brown       | Fairfax         | VA    | 33332 |           19.50 |         15 |
+| Lyla       | Moore       | McLean          | VA    | 45555 |           23.80 |         16 |
+| Noah       | Hall        | Herndon         | VA    | 81111 |           28.40 |         17 |
+| Benjamin   | Anderson    | Falls Church    | VA    | 26666 |           28.00 |         18 |
+| Daniel     | Jackson     | Tysons          | VA    | 23333 |           20.67 |         19 |
+| Saba       | Wilson      | Lorton          | VA    | 52222 |           30.60 |         20 |
+| Trevor     | Miller      | Great Falls     | VA    | 74444 |           15.50 |         21 |
+| Jhon       | Martin      | Leesburg        | VA    | 99992 |           13.80 |         22 |
+| Elijah     | Campbell    | Lorton          | VA    | 52221 |           23.80 |         23 |
++------------+-------------+-----------------+-------+-------+-----------------+------------+
+21 rows in set (0.00 sec)
+
+mysql> SELECT last_name, city, zip
+    -> FROM staff;
++-------------+-----------------+-------+
+| last_name   | city            | zip   |
++-------------+-----------------+-------+
+| Perry       | Richmond        | 11111 |
+| Zilino      | Reston          | 22222 |
+| Green       | Fairfax         | 33333 |
+| Bergamaschi | Arlington       | 44444 |
+| Mendez      | Alexandria      | 55555 |
+| Shapiro     | Charlottesville | 66666 |
+| Jhonson     | Richmond        | 11112 |
+| Taylor      | Annandele       | 77777 |
+| Martinez    | Ashburn         | 88888 |
+| Smith       | Reston          | 22221 |
+| Davis       | Leesburg        | 99999 |
+| Jones       | Manassas        | 32222 |
+| Brown       | Fairfax         | 33332 |
+| Moore       | McLean          | 45555 |
+| Hall        | Herndon         | 81111 |
+| Anderson    | Falls Church    | 26666 |
+| Jackson     | Tysons          | 23333 |
+| Wilson      | Lorton          | 52222 |
+| Miller      | Great Falls     | 74444 |
+| Martin      | Leesburg        | 99992 |
+| Campbell    | Lorton          | 52221 |
++-------------+-----------------+-------+
+21 rows in set (0.00 sec)
+
+mysql> SELECT last_name, first_name, hourly_pay_rate
+    -> FROM staff
+    -> ORDER BY last_name DESC;
++-------------+------------+-----------------+
+| last_name   | first_name | hourly_pay_rate |
++-------------+------------+-----------------+
+| Zilino      | Mary       |           15.68 |
+| Wilson      | Saba       |           30.60 |
+| Taylor      | James      |           15.70 |
+| Smith       | Kerry      |           30.60 |
+| Shapiro     | Sofia      |           18.50 |
+| Perry       | Juan       |           17.53 |
+| Moore       | Lyla       |           23.80 |
+| Miller      | Trevor     |           15.50 |
+| Mendez      | Camila     |           25.00 |
+| Martinez    | Robert     |           17.53 |
+| Martin      | Jhon       |           13.80 |
+| Jones       | Felicity   |           20.60 |
+| Jhonson     | Lorena     |           12.50 |
+| Jackson     | Daniel     |           20.67 |
+| Hall        | Noah       |           28.40 |
+| Green       | Shawn      |           12.50 |
+| Davis       | Aria       |           24.60 |
+| Campbell    | Elijah     |           23.80 |
+| Brown       | Laura      |           19.50 |
+| Bergamaschi | Joseph     |           15.25 |
+| Anderson    | Benjamin   |           28.00 |
++-------------+------------+-----------------+
+21 rows in set (0.00 sec)
+
+mysql> SELECT last_name, hourly_pay_rate
+    -> FROM staff
+    -> ORDER BY hourly_pay_rate
+    -> LIMIT 1;
++-----------+-----------------+
+| last_name | hourly_pay_rate |
++-----------+-----------------+
+| Green     |           12.50 |
++-----------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(hourly_pay_rate) / 4 
+    -> FROM staff;
++--------------------------+
+| SUM(hourly_pay_rate) / 4 |
++--------------------------+
+|               107.515000 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(hourly_pay_rate) 
+    -> FROM staff;
++----------------------+
+| AVG(hourly_pay_rate) |
++----------------------+
+|            20.479048 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> UPDATE staff
+    -> SET last_name = 'Perez'
+    -> WHERE first_name = 'Juan' AND last_name = 'Perry';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT first_name, last_name
+    -> FROM staff
+    -> WHERE first_name = 'Juan' AND last_name = 'Perez';
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| Juan       | Perez     |
++------------+-----------+
+1 row in set (0.00 sec)
+
+mysql> exit
