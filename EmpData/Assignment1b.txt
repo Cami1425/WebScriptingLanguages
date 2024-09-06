@@ -1,0 +1,140 @@
+mysql> USE Employees;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| employees  |
++------------+
+1 row in set (0.00 sec)
+
+mysql> ALTER TABLE staff 
+    -> ADD COLUMN id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT FIRST,
+    -> ADD PRIMARY KEY (id);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE staff;
++-----------------+----------------------+------+-----+---------+----------------+
+| Field           | Type                 | Null | Key | Default | Extra          |
++-----------------+----------------------+------+-----+---------+----------------+
+| id              | mediumint unsigned   | NO   | PRI | NULL    | auto_increment |
+| first_name      | char(25)             | NO   |     | NULL    |                |
+| last_name       | char(25)             | NO   |     | NULL    |                |
+| city            | char(15)             | NO   |     | NULL    |                |
+| state           | char(2)              | NO   |     | NULL    |                |
+| zip             | char(5)              | YES  |     | NULL    |                |
+| hourly_pay_rate | double(4,2) unsigned | NO   |     | NULL    |                |
+| manager_id      | mediumint unsigned   | NO   |     | NULL    |                |
++-----------------+----------------------+------+-----+---------+----------------+
+8 rows in set (0.01 sec)
+
+mysql> SELECT * FROM staff;
++----+------------+-------------+-----------------+-------+-------+-----------------+------------+
+| id | first_name | last_name   | city            | state | zip   | hourly_pay_rate | manager_id |
++----+------------+-------------+-----------------+-------+-------+-----------------+------------+
+|  1 | Juan       | Perez       | Richmond        | VA    | 11111 |           17.53 |          2 |
+|  2 | Mary       | Zilino      | Reston          | VA    | 22222 |           15.68 |          1 |
+|  3 | Shawn      | Green       | Fairfax         | VA    | 33333 |           12.50 |          3 |
+|  4 | Joseph     | Bergamaschi | Arlington       | VA    | 44444 |           15.25 |          2 |
+|  5 | Camila     | Mendez      | Alexandria      | VA    | 55555 |           25.00 |          6 |
+|  6 | Sofia      | Shapiro     | Charlottesville | VA    | 66666 |           18.50 |          5 |
+|  7 | Lorena     | Jhonson     | Richmond        | VA    | 11112 |           12.50 |          3 |
+|  8 | James      | Taylor      | Annandele       | VA    | 77777 |           15.70 |          4 |
+|  9 | Robert     | Martinez    | Ashburn         | VA    | 88888 |           17.53 |          3 |
+| 10 | Kerry      | Smith       | Reston          | VA    | 22221 |           30.60 |          5 |
+| 11 | Aria       | Davis       | Leesburg        | VA    | 99999 |           24.60 |          6 |
+| 12 | Felicity   | Jones       | Manassas        | VA    | 32222 |           20.60 |          5 |
+| 13 | Laura      | Brown       | Fairfax         | VA    | 33332 |           19.50 |          4 |
+| 14 | Lyla       | Moore       | McLean          | VA    | 45555 |           23.80 |          2 |
+| 15 | Noah       | Hall        | Herndon         | VA    | 81111 |           28.40 |          4 |
+| 16 | Benjamin   | Anderson    | Falls Church    | VA    | 26666 |           28.00 |          3 |
+| 17 | Daniel     | Jackson     | Tysons          | VA    | 23333 |           20.67 |          1 |
+| 18 | Saba       | Wilson      | Lorton          | VA    | 52222 |           30.60 |          2 |
+| 19 | Trevor     | Miller      | Great Falls     | VA    | 74444 |           15.50 |          4 |
+| 20 | Jhon       | Martin      | Leesburg        | VA    | 99992 |           13.80 |          5 |
+| 21 | Elijah     | Campbell    | Lorton          | VA    | 52221 |           23.80 |          6 |
++----+------------+-------------+-----------------+-------+-------+-----------------+------------+
+21 rows in set (0.00 sec)
+
+mysql> CREATE TABLE managers (
+    -> manager_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    ->     f_name CHAR (25) NOT NULL, 
+    ->     l_name CHAR (25) NOT NULL,
+    ->     PRIMARY KEY (manager_id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> DESCRIBE managers;
++------------+--------------------+------+-----+---------+----------------+
+| Field      | Type               | Null | Key | Default | Extra          |
++------------+--------------------+------+-----+---------+----------------+
+| manager_id | mediumint unsigned | NO   | PRI | NULL    | auto_increment |
+| f_name     | char(25)           | NO   |     | NULL    |                |
+| l_name     | char(25)           | NO   |     | NULL    |                |
++------------+--------------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO managers (f_name, l_name)
+    -> VALUES 
+    -> ('Ahmed', 'Brown'),
+    ->     ('Mia', 'Zapata'),
+    ->     ('John', 'Novak'),
+    ->     ('Santiago', 'Gutierrez'),
+    ->     ('Marilyn', 'Palm'),
+    ->     ('Jeniffer', 'Swift');
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM managers;
++------------+----------+-----------+
+| manager_id | f_name   | l_name    |
++------------+----------+-----------+
+|          1 | Ahmed    | Brown     |
+|          2 | Mia      | Zapata    |
+|          3 | John     | Novak     |
+|          4 | Santiago | Gutierrez |
+|          5 | Marilyn  | Palm      |
+|          6 | Jeniffer | Swift     |
++------------+----------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> ALTER TABLE staff 
+    -> ADD CONSTRAINT manager_id FOREIGN KEY (manager_id) 
+    -> REFERENCES managers(manager_id) 
+    -> ON DELETE NO ACTION 
+    -> ON UPDATE NO ACTION;
+Query OK, 21 rows affected (0.03 sec)
+Records: 21  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE staff;
++-----------------+----------------------+------+-----+---------+----------------+
+| Field           | Type                 | Null | Key | Default | Extra          |
++-----------------+----------------------+------+-----+---------+----------------+
+| id              | mediumint unsigned   | NO   | PRI | NULL    | auto_increment |
+| first_name      | char(25)             | NO   |     | NULL    |                |
+| last_name       | char(25)             | NO   |     | NULL    |                |
+| city            | char(15)             | NO   |     | NULL    |                |
+| state           | char(2)              | NO   |     | NULL    |                |
+| zip             | char(5)              | YES  |     | NULL    |                |
+| hourly_pay_rate | double(4,2) unsigned | NO   |     | NULL    |                |
+| manager_id      | mediumint unsigned   | NO   | MUL | NULL    |                |
++-----------------+----------------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> INSERT INTO staff (first_name, last_name, city, state, zip,hourly_pay_rate,manager_id) 
+    -> VALUES ('Harry', 'Potter', 'Hollow', 'MI', '44444', 15.15, 23);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`employees`.`staff`, CONSTRAINT `manager_id` FOREIGN KEY (`manager_id`) REFERENCES `managers` (`manager_id`))
+mysql> -- manager_id = 3 does not exist
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO staff (first_name, last_name, city, state, zip,hourly_pay_rate,manager_id) 
+    -> VALUES ('Harry', 'Potter', 'Hollow', 'MI', '44444', 15.15, 2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> DELETE FROM managers WHERE manager_id=3;
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`employees`.`staff`, CONSTRAINT `manager_id` FOREIGN KEY (`manager_id`) REFERENCES `managers` (`manager_id`))
+mysql> exit

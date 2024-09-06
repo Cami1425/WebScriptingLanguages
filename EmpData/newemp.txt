@@ -1,0 +1,21 @@
+Juan,Perry,Richmond,VA,11111,17.53,6
+Mary,Zilino,Reston,VA,22222,15.68,3
+Shawn,Green,Fairfax,VA,33333,12.5,4
+Joseph,Bergamaschi,Arlington,VA,44444,15.25,5
+Camila,Mendez,Alexandria,VA,55555,25, 7
+Sofia,Shapiro,Charlottesville,VA,66666,18.50,8
+Lorena,Jhonson,Richmond,VA,11112,12.5,9
+James,Taylor,Annandele,VA,77777,15.7,10
+Robert,Martinez,Ashburn,VA,88888,17.53,11 
+Kerry,Smith,Reston,VA,22221,30.6,12
+Aria,Davis,Leesburg,VA,99999,24.6,13 
+Felicity,Jones,Manassas,VA,32222,20.6,14
+Laura,Brown,Fairfax,VA,33332,19.5,15
+Lyla,Moore,McLean,VA,45555,23.8,16
+Noah,Hall,Herndon,VA,81111,28.4,17
+Benjamin,Anderson,Falls Church,VA,26666,28,18
+Daniel,Jackson,Tysons,VA,23333,20.67,19
+Saba,Wilson,Lorton,VA,52222,30.6,20
+Trevor,Miller,Great Falls,VA,74444,15.5,21
+Jhon,Martin,Leesburg,VA,99992,13.8,22
+Elijah,Campbell,Lorton,VA,52221,23.8,23
