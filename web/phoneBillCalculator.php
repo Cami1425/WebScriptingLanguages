@@ -27,7 +27,7 @@
         <div class="sideNav" id="overlaySideNav">
             <button class="hamburger">&#9776;</button>
             <nav class="menuNav">
-                <a href="WSLProjects.html">Main Page</a>
+                <a href="../index.html">Main Page</a>
                 <a href="Project4Ch5.html">Project 4 Ch5</a>
                 <a href="Project5Ch6.html">Project 5 Ch6</a>
                 <a href="Project6Ch7.html">Project 6 Ch7</a>
